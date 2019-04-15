@@ -1,2 +1,12 @@
 h1, p {
-    font-family: Lato;}html, body {  height: 100%;}.Login-component {    background: url(https://i.imgur.com/tjYiDcx.jpg);      /* Full height */     height: 100%;      /* Center and scale the image nicely */    background-position: center;    background-repeat: no-repeat;    background-size: cover;}
+    font-family: Lato;}
+    html, body 
+    {  height: 100%;}
+    .Login-component { 
+         background: url(https://i.imgur.com/tjYiDcx.jpg);  
+             /* Full height */    
+              height: 100%; 
+                  /* Center and scale the image nicely */ 
+                     background-position: center; 
+                        background-repeat: no-repeat;  
+                          background-size: cover;}
