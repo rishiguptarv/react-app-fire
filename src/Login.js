@@ -4,6 +4,7 @@ import '../style.css';
 import Button from '@material-ui/core/Button';
 import PhoneInput from 'react-phone-number-input';
 import Select from '@material-ui/core/Select';
+import Grid from '@material-ui/core/Grid';
 
 class Login extends Component {
   constructor() {
@@ -16,19 +17,18 @@ class Login extends Component {
   render() {
     return (
     <div className="Login-component">
-      <PhoneInput
+    <Grid
+  container
+  direction="row"
+  justify="center"
+  alignItems="center"> 
+    <PhoneInput
     placeholder="Enter phone number"
     value={ this.state.phone }
-    onChange={ phone => this.setState({ phone }) } />
-     <Select
-            value={this.state.age}
-            onChange={this.handleChange}
-            inputProps={{
-              name: 'age',
-              id: 'age-simple',
-            }}
-          />
+    onChange={ phone => this.setState({ phone }) } />  
+    </Grid>
     </div>
+  
     
     );
   }
