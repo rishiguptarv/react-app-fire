@@ -1,33 +1,29 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import '../style.css';
-import Button from '@material-ui/core/Button';
-import Select from '@material-ui/core/Select';
-import Grid from '@material-ui/core/Grid';
+import React from 'react';
+import faker from 'faker';
+import _ from 'lodash';
+import {Select, BootstrapInput, MenuItem, Input } from '@material-ui/core';
 
-class Login extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'React'
-    };
+
+ class Login extends React.Component {
+
+  state =  {
+    login:""
   }
 
-  render() {
+  render(){
     return (
-    <div className="Login-component">
-    <Grid
-  container
-  direction="column"
-  justify="center"
-  alignItems="center"> 
-  
-    </Grid>
-    </div>
-  
-    
+      <div>
+      <Select placeholder='Select your country'>
+            <MenuItem value={+91}>India</MenuItem>
+            <MenuItem value={+92}>dummy</MenuItem>
+            <MenuItem value={+93}>dummy</MenuItem>
+            </Select>
+
+      <Input placeholder='phone' />
+      </div>
     );
   }
+
 }
 
-export default (Login);
+export default Login;
