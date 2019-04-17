@@ -6,7 +6,7 @@ import {Select, BootstrapInput, MenuItem, Input, Button } from '@material-ui/cor
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-  const config = {
+  var config = {
     apiKey: "AIzaSyB5OTFxrmsLItoxP6ISO9gxTtjcSN9FlXQ",
     authDomain: "phone-login-536c9.firebaseapp.com",
     databaseURL: "https://phone-login-536c9.firebaseio.com",
@@ -20,11 +20,29 @@ import 'firebase/auth';
 
  class Login extends React.Component {
  componentDidMount(){
-   let window='';
+   var window='';
         firebase.auth().languageCode = 'india';
         var phoneNumber ="+918923569047";
         var appVerifier = window.recaptchaVerifier;
-        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier("recaptcha-container");
+            // try {
+      window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier("recaptcha-container");
+      console.log(window.recaptchaVerifier);
+      firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+    .then(function (confirmationResult) {
+      // SMS sent. Prompt user to type the code from the message, then sign the
+      // user in with confirmationResult.confirm(code).
+      window.confirmationResult = confirmationResult;
+    }).catch(function (error) {
+      // Error; SMS not sent
+      // ...
+      console.log(error);
+    });
+    // } catch (error) {
+    //   console.log(error);
+    // }
+
+    
+        
    
  }
       state =  {
