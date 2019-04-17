@@ -24,14 +24,7 @@ import 'firebase/auth';
         firebase.auth().languageCode = 'india';
         var phoneNumber ="+918923569047";
         var appVerifier = window.recaptchaVerifier;
-        // window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
-        //     'size': 'invisible',
-        //     'callback': function(response) {
-        //         // reCAPTCHA solved, allow signInWithPhoneNumber.
-        //         onSignInSubmit();
-        //     }
-        // });
-        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier("recaptcha-container");
    
  }
       state =  {
@@ -46,6 +39,7 @@ import 'firebase/auth';
   }
 
   render(){
+
      console.log(this.state);
      
      const { classes } = this.props;
@@ -61,7 +55,8 @@ import 'firebase/auth';
        <Button variant="contained" color="primary" id='sign-in-button'>
       Send Code
     </Button>
-    <div id="recaptcha-container"></div>
+    
+   <div id="recaptcha-container" />
       </div>
       
     );
