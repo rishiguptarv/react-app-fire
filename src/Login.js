@@ -7,13 +7,19 @@ import {Select, BootstrapInput, MenuItem, Input } from '@material-ui/core';
  class Login extends React.Component {
 
   state =  {
-    login:""
+    login:"",
+    countryCode:''
+  }
+
+  onCodeChange(this){
+    this.setState= {"countryCode":this.value};
+   console.log(state);
   }
 
   render(){
     return (
       <div>
-      <Select placeholder='Select your country'>
+      <Select placeholder='Select your country' onChange={this.onCodeChange.bind(this)} value={this.state.countryCode}>
             <MenuItem value={+91}>India</MenuItem>
             <MenuItem value={+92}>dummy</MenuItem>
             <MenuItem value={+93}>dummy</MenuItem>

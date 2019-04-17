@@ -6,13 +6,6 @@ import Button from '@material-ui/core/Button';
 import Login from './src/Login'
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'React'
-    };
-  }
-
   render() {
     return (
       <Login/>
