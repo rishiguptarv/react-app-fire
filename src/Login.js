@@ -22,7 +22,7 @@ import 'firebase/auth';
  componentDidMount(){
    //const confirmationResult='';
         firebase.auth().languageCode = 'india';
-        var phoneNumber ="+919990556720";
+        var phoneNumber ="+918923569047";
         const recaptchaVerifier = new firebase.auth.RecaptchaVerifier("recaptcha-container");
       console.log(recaptchaVerifier);
       const appVerifier = recaptchaVerifier;
