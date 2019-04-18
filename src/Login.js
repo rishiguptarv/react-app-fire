@@ -20,6 +20,7 @@ import 'firebase/auth';
 
  class Login extends React.Component {
  componentDidMount(){
+   //const confirmationResult='';
         firebase.auth().languageCode = 'india';
         var phoneNumber ="+918923569047";
         const recaptchaVerifier = new firebase.auth.RecaptchaVerifier("recaptcha-container");
@@ -30,7 +31,16 @@ import 'firebase/auth';
 
       // SMS sent. Prompt user to type the code from the message, then sign the
       // user in with confirmationResult.confirm(code).
-      //window.confirmationResult = confirmationResult;
+      confirmationResult = confirmationResult;
+        var code = '123456';
+confirmationResult.confirm(code).then(function (result) {
+  // User signed in successfully.
+  var user = result.user;
+  // ...
+}).catch(function (error) {
+  // User couldn't sign in (bad verification code?)
+  // ...
+});
       console.log(confirmationResult);
     }).catch(function (error) {
       // Error; SMS not sent
@@ -38,6 +48,9 @@ import 'firebase/auth';
       console.log(error);
     });
   
+  //get Code
+
+
 
     
         
