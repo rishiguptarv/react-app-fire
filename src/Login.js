@@ -22,8 +22,6 @@ import 'firebase/auth';
  componentDidMount(){
         firebase.auth().languageCode = 'india';
         var phoneNumber ="+918923569047";
-        
-            // try {
         const recaptchaVerifier = new firebase.auth.RecaptchaVerifier("recaptcha-container");
       console.log(recaptchaVerifier);
       const appVerifier = recaptchaVerifier;
@@ -39,9 +37,7 @@ import 'firebase/auth';
       // ...
       console.log(error);
     });
-    // } catch (error) {
-    //   console.log(error);
-    // }
+  
 
     
         
