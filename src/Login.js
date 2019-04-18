@@ -22,16 +22,18 @@ import 'firebase/auth';
  componentDidMount(){
         firebase.auth().languageCode = 'india';
         var phoneNumber ="+918923569047";
-        // var appVerifier = recaptchaVerifier;
+        
             // try {
-       var recaptchaVerifier = new firebase.auth.RecaptchaVerifier("recaptcha-container");
+        const recaptchaVerifier = new firebase.auth.RecaptchaVerifier("recaptcha-container");
       console.log(recaptchaVerifier);
-      firebase.auth().signInWithPhoneNumber(phoneNumber, recaptchaVerifier)
+      const appVerifier = recaptchaVerifier;
+      firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
     .then(function (confirmationResult) {
-      alert("ok");
+
       // SMS sent. Prompt user to type the code from the message, then sign the
       // user in with confirmationResult.confirm(code).
-      window.confirmationResult = confirmationResult;
+      //window.confirmationResult = confirmationResult;
+      console.log(confirmationResult);
     }).catch(function (error) {
       // Error; SMS not sent
       // ...
