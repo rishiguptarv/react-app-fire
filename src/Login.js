@@ -20,13 +20,12 @@ import 'firebase/auth';
 
  class Login extends React.Component {
  componentDidMount(){
-   var window='';
         firebase.auth().languageCode = 'india';
         var phoneNumber ="+918923569047";
         var appVerifier = window.recaptchaVerifier;
             // try {
-      window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier("recaptcha-container");
-      console.log(window.recaptchaVerifier);
+       var recaptchaVerifier = new firebase.auth.RecaptchaVerifier("recaptcha-container");
+      console.log(recaptchaVerifier);
       firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
     .then(function (confirmationResult) {
       // SMS sent. Prompt user to type the code from the message, then sign the
